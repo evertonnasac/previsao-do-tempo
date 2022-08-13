@@ -1,7 +1,7 @@
 
 import lang from "../utils/lang.js"
 import handleLang from "./handleLang.js"
-import { handleTemp, setPositionBtnTemp } from "./handleTemp.js"
+import { handleTemp, setPositionBtnTemp, toggleTemp } from "./handleTemp.js"
 import {getPresisionPlace} from "../utils/api.js"
 
 const divSwapTemp = document.querySelector(".swap-temp")
@@ -249,7 +249,7 @@ const init = () => {
     initTemp()
 
     //Seta a posição do botão de trocar a temperatura
-    setPositionBtnTemp(btnSwapTemp)
+    btnSwapTemp.style.left = setPositionBtnTemp()
     
     pTitle.innerText = getLang().title
     pLang.innerText = getLang().currentLang
@@ -275,7 +275,9 @@ btnEsp.addEventListener("click", () =>{
 })
 
 divSwapTemp.addEventListener("click", () =>{
-    handleTemp(btnSwapTemp)
+
+    toggleTemp()
+    btnSwapTemp.style.left = setPositionBtnTemp()
 })
 
 txtCity.addEventListener("keyup", (e) =>{
