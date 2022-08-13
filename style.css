@@ -1,0 +1,375 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    background-image: url("./images/sky.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 100vw;
+}
+
+li {
+    list-style: none;
+}
+
+li:hover{
+    cursor: pointer;
+    
+}
+
+a:hover{
+    cursor: pointer;
+
+}
+
+.back{
+    
+    left: 30px;
+    position: absolute;
+    width: 40px;
+    top: 60px;
+
+    border-top: 3px solid white ;
+}
+
+.back:hover{
+    cursor: pointer;
+}
+
+.back > div {
+
+    position: relative;
+    bottom: 13px;
+    width: 25px;
+    height: 25px;
+    
+    transform: rotate(50deg);
+
+    border-bottom: 3px solid white ;
+    border-left: 3px solid white ;
+    border-radius: 5px;
+}
+
+
+.container{
+    min-height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title, .city-name{
+
+    text-align: center;
+    height: 52px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 43px;
+    line-height: 52px;
+    letter-spacing: 0.14em;
+    color: #FFFFFF;
+}
+
+#city{
+    width: 70%;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.77);
+    border-radius: 10px;
+    border-style: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #6AA2D1;
+}
+
+.suggest{
+    width: 70%;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.77);
+    border-style: none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    color: #6AA2D1;
+    display: none;
+    overflow-y: scroll;
+}
+
+.current-suggest{
+    background-color: #B5C69B;
+}
+
+
+.description {
+    width: 70%;
+    height: 24px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.content-info{
+    display: flex;
+    justify-content: space-between;
+    width: 209px;
+    height: 100px;
+    
+}
+
+.content-temp{
+    width: 70%;
+    height: 24px;
+
+    display: flex;
+    justify-content: center;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    column-gap: 8px;
+
+    color: #FFFFFF;
+}
+
+.temp-value{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 100px;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: #FFFFFF;
+
+}
+
+.link-next-days{
+    margin-top: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 15px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.icon-content{
+    width: 99.69px;
+    height: 100px;
+}
+
+.icon{
+    width: 100px;
+    
+}
+
+
+
+
+.next-day-info{
+    margin: 0 auto;
+    display: flex;
+    column-gap: 20px;
+
+}
+
+.next-date, .next-subtitle{
+    min-width: 115px;
+    min-height: 24px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.next-subtitle{
+    margin-bottom: 30px;
+}
+
+.next-icon{
+    width: 40px;
+    height: 40px;
+ 
+}
+
+.next-bar{
+
+    background-image: linear-gradient(90deg, #B5C69B 40.87%, rgba(224, 151, 42, 0.53) 87.23%);
+    
+    width: 176px;
+    height: 5px;
+}
+
+.next-temp{ row-gap: 10px;
+    min-width: 22px;
+    min-height: 20px;
+  
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+    color: #FFFFFF;
+
+}
+
+.next-description{
+    min-width: 80px;
+    min-height: 20px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height */
+
+    color: #FFFFFF;
+}
+
+.panel-units{
+    position: absolute;
+    display: flex;
+    top: 50px;
+    right: 30px;
+    column-gap: 5px;
+}
+
+.swap-temp{
+    position: relative;
+    width: 50px;
+    height: 30px;
+    background: #D2B3C1;
+    border-radius: 20px;
+}
+
+
+.swap-temp div {
+    position: absolute;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    background: #D9D9D9;
+    
+}
+
+.swap-temp div:hover {
+    cursor: pointer;
+}
+
+.units{
+    width: 17px;
+    height: 18px;
+    margin-top: 5px;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    letter-spacing: 0.05em;
+
+    color: #D9D9D9;
+
+}
+
+
+.content-lang{
+
+    width: 300px;
+    height: 50px;
+    
+    position: absolute;
+    bottom: 2px;
+    display: flex;
+    flex-direction: column;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.lang{
+  
+    justify-content: center;
+
+    display: flex;
+    column-gap: 10px;
+    
+}
+
+.btn-lang{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #B5C69B;
+    cursor: pointer;
+}
+
+.pt-br{
+    background-image: url("./images/brasil.png");
+  
+}
+.eng{
+    background-image: url("./images/estados-unidos.png");
+}
+.esp{
+    background-image: url("./images/spain.png");
+}
+
+.lang-current{
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+@media (max-width : 620px) {
+
+    .title, .city-name {
+        height: 100px;
+    }
+    
+    .next-description{
+        display: none;
+    }
+
+}
+
+@media (max-width : 455px) {
+
+    .next-bar{
+        display: none;
+    }
+}
