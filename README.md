@@ -1,7 +1,7 @@
 # Previsão do Tempo	:cloud_with_rain:	:sunny: :partly_sunny: 	:cloud_with_lightning_and_rain:
 
 ## Esse é o modesto website para consultar a previsão do tempo de qualquer cidade do mundo
-< https://evertonnasac.github.io/previsao-do-tempo/>
+<https://evertonnasac.github.io/previsao-do-tempo/>
 
 ### Resultados:
 
