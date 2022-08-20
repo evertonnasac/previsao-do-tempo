@@ -8,8 +8,9 @@ body{
     background-size: cover;
     background-attachment: fixed;
     background-size: cover;
-    min-height: 100%;
+    min-height: 100vh;
     min-width: 100vw;
+   /* font-size: 62.5%;*/
 }
 
 li {
@@ -18,13 +19,11 @@ li {
 
 li:hover{
     cursor: pointer;
-    
+    background-color: #B5C69B;
+
     
 }
 
-ul{
-    padding:  5px;
-}
 
 a:hover{
     cursor: pointer;
@@ -67,23 +66,25 @@ a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding:  5px;
 }
 
 .title, .city-name{
 
     text-align: center;
-    height: 52px;
+    min-height: 52px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 700;
-    font-size: 43px;
+    font-size: 47px;
     line-height: 52px;
     letter-spacing: 0.14em;
     color: #FFFFFF;
 }
 
 #city{
-    width: 70%;
+    
+    width: 80%;
     height: 50px;
     background: rgba(255, 255, 255, 0.77);
     border-radius: 10px;
@@ -97,7 +98,7 @@ a:hover{
 }
 
 .suggest{
-    width: 70%;
+    width: 80%;
     height: 100px;
     background: rgba(255, 255, 255, 0.77);
     border-style: none;
@@ -106,8 +107,9 @@ a:hover{
     font-weight: 400;
     line-height: 24px;
     color: #6AA2D1;
-    display: none;
     overflow-y: scroll;
+    visibility: hidden;
+
 }
 
 .current-suggest{
@@ -360,21 +362,29 @@ a:hover{
     color: #FFFFFF;
 }
 
-@media (max-width : 620px) {
+@media (max-width : 602px) {
 
-    .title, .city-name {
-        height: 100px;
-    }
     
     .next-description{
         display: none;
     }
+   /* #city, .next-description, .description, .next-subtitle{
+        margin-top: 45px;
+    }*/
+
+  
 
 }
 
-@media (max-width : 455px) {
+@media (max-width : 455px )  {
 
     .next-bar{
         display: none;
     }
+   /* #city, .next-description, .description, .next-subtitle{
+        margin-top: 50px;
+    }*/
+
+   
 }
+

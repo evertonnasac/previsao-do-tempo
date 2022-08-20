@@ -23,6 +23,7 @@ const getLang = () => {
     let lang = handleLang.getLang()
 
     let langs = {
+        
         pt_br : {
             title : "Como está o tempo hoje?",
             currentLang : "Idioma selecionado: PORTUGUES",
@@ -44,6 +45,7 @@ const getLang = () => {
     return langs[lang]
 
 }
+
 
 //Busca o lo cidades para preencher o autocomplete do campo cidade
 const  getPlace = async (e) => {
@@ -98,20 +100,34 @@ const getFormatPlace = (data) =>{
 }
 
 
+
+
+
 const fullSuggestionPlace = (formatPlace) => {
+
 
     ulSuggest.innerHTML = ""
 
+     formatPlace.forEach(({lat, lon, suggestion}) =>{
 
-    let suggest = formatPlace.map(({lat, lon, suggestion}) =>
+        let li = document.createElement("li")
 
-        
-        `<li lat = "${lat}" lon = ${lon}>${suggestion}</li>`
-    ).join("")
+        li.setAttribute("lat", `${lat}`)
+        li.setAttribute("lon", `${lon}`)
+        li.innerHTML = suggestion
 
-    ulSuggest.style.display = "block"
-    ulSuggest.innerHTML += suggest
-    txtCity.style.borderBottomRadius = "0px"
+        li.onclick = function () {
+            getInfoTemp(this)
+        }
+
+        ulSuggest.appendChild(li)
+
+     })
+
+    ulSuggest.style.visibility = "visible"
+    txtCity.style.borderBottomLeftRadius = "0px"
+    txtCity.style.borderBottomRightRadius = "0px"
+
 
 
     if(ulSuggest.firstChild){
@@ -119,23 +135,25 @@ const fullSuggestionPlace = (formatPlace) => {
         let nextSugest = ulSuggest.firstChild
         nextSugest.setAttribute("suggest-down","")
     }
-    
 
 }
+
 
 const closeSuggest = () =>{
 
     ulSuggest.innerHTML = ""
-    ulSuggest.style.display = "none"
-    txtCity.style.borderBottomRadius = "10px"
+    ulSuggest.style.visibility = "hidden"
+    txtCity.style.borderBottomLeftRadius = "10px"
+    txtCity.style.borderBottomRightRadius = "10px"
 
 }
+
 
 
 const navigateSuggest = (e) => {
 
     
-    if(ulSuggest.style.display == "block"){
+    if(ulSuggest.style.visibility == "visible"){
 
         let sugestUp = document.querySelector("[suggest-up]")
         let currentSuggest = document.querySelector(".current-suggest")
@@ -243,6 +261,39 @@ const initLang = () => {
 }
 
 
+function getInfoTemp(e = undefined){
+
+    let lat, lon
+
+    if(e){
+
+        lat = e.getAttribute("lat")
+        lon = e.getAttribute("lon")
+
+    }
+
+    else {
+
+        let element = document.querySelector(".current-suggest")
+
+        if(!element){
+            return
+        }
+
+        lat = element.getAttribute("lat")
+        lon = element.getAttribute("lon")   
+
+    }
+
+    if(lat && lon){
+        window.location = `./pages/infotemp.html?lat=${lat}&lon=${lon}`
+    }
+            
+            
+}
+
+
+
 const init = () => {
 
     initLang()
@@ -291,22 +342,9 @@ txtCity.addEventListener("keyup", (e) =>{
     }
 
     else if(e.key == "Enter"){
-        
-        
-        let element = document.querySelector(".current-suggest")
 
+        getInfoTemp()
         
-        if(!element){
-            return
-        }
-        let lat = element.getAttribute("lat")
-        let lon = element.getAttribute("lon")
-
-        if(lat && lon){
-            window.location = `./pages/infotemp.html?lat=${lat}&lon=${lon}`
-        }
-       
-
     }
 
 })
