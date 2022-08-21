@@ -1,6 +1,6 @@
 # Previsão do Tempo	:cloud_with_rain:	:sunny: :partly_sunny: 	:cloud_with_lightning_and_rain:
 
-## Esse é o modesto website para consultar a previsão do tempo de qualquer cidade do mundo
+## Esse é um modesto website para consultar a previsão do tempo de qualquer cidade do mundo
 <https://evertonnasac.github.io/previsao-do-tempo/>
 
 ### Resultados:
@@ -8,7 +8,7 @@
 * Previsão do tempo atual, com temperaturas mínima e máxima
 * Previsão com mímina e máxima pelos próximos 5 dias
 
-### Comodidades: 
+### Funcionalidades: 
 
 * O auto complete no campo cidade ajuda a buscar por locais mais precisos:<br>
 ![autocomplete cidade](images/cidade)
