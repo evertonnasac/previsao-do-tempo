@@ -22,8 +22,8 @@
 ![selecionar idioma](images/idioma)
 
 
-Foi utiliza a API Open Weathermap <https://openweathermap.org/api> para os dados sobre a previsão do tempo <br>
-e a API Nominatim <https://nominatim.org/release-docs/latest/> para buscar a localização precisa do lugar a ser consultado
+Foi utilizada a API Open Weathermap <https://openweathermap.org/api> para buscar os dados sobre a previsão do tempo <br>
+e a API Nominatim <https://nominatim.org/release-docs/latest/> para buscar a localização precisa do lugar a ser consultado e implementar o autopreenchimento no campo cidade.
 
 Desenvolvido com:<br>
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
