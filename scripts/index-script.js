@@ -114,7 +114,7 @@ const fullSuggestionPlace = (formatPlace) => {
 
         li.setAttribute("lat", `${lat}`)
         li.setAttribute("lon", `${lon}`)
-        li.innerHTML = suggestion
+        li.innerHTML = `<a>${suggestion}</p>`
 
         li.onclick = function () {
             getInfoTemp(this)
@@ -171,9 +171,19 @@ const navigateSuggest = (e) => {
             }
 
             if(currentSuggest){
+
                 currentSuggest.setAttribute("suggest-up","")
                 currentSuggest.classList.remove("current-suggest")
-                ulSuggest.scrollBy(0,24)
+
+                if(suggestDown.getBoundingClientRect().bottom >
+                    ulSuggest.getBoundingClientRect().bottom){
+
+                       ulSuggest.scrollBy(0,24)
+                        
+                }
+                
+                
+                
             }
 
             if(sugestUp){
@@ -183,6 +193,7 @@ const navigateSuggest = (e) => {
             if(suggestDown.nextElementSibling){
                 
                 suggestDown.nextElementSibling.setAttribute("suggest-down","")
+                
             }
 
             else{
@@ -329,6 +340,7 @@ divSwapTemp.addEventListener("click", () =>{
 
     toggleTemp()
     btnSwapTemp.style.left = setPositionBtnTemp()
+    
 })
 
 txtCity.addEventListener("keyup", (e) =>{

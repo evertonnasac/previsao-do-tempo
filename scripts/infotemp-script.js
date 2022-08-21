@@ -90,7 +90,6 @@ const getLanguage = () =>{
 //Renderiza os dados nos elementos HTML retornados da API
 const showWeather = () => {
 
-    console.log(infoWeather.getInfo())
 
     pDescription.innerHTML = infoWeather.getInfo().description
     pNameCity.innerHTML = infoWeather.getInfo().city.toUpperCase()
@@ -142,10 +141,10 @@ divSwapTemp.addEventListener("click", () =>{
     let infoUpdated = handleTemp(infoWeather.getInfo())
 
     infoWeather.changeTemp(infoUpdated)
-    
-    btnSwapTemp.style.left = setPositionBtnTemp()
-    
+
     toggleTemp()
+
+    btnSwapTemp.style.left = setPositionBtnTemp()
 })
 
 divBack.addEventListener("click", back)
